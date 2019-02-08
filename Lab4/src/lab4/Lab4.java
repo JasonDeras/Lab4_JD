@@ -5,12 +5,21 @@ import java.util.*;
 public class Lab4 {
 
     static Scanner l = new Scanner(System.in);
+    static int pos;
 
     public static void main(String[] args) {
         int r = 1;
         while (r == 1) {
             switch (menu()) {
                 case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    System.out.print("Ingrese una posicion a elimnar: ");
+                    pos=l.nextInt();
+                    break;
+                case 4:
                     break;
                 default:
                     System.out.println("Opcion no valida\n");
@@ -22,6 +31,10 @@ public class Lab4 {
     }//Fin del main
 
     static int menu() {
+        System.out.println("1. Crear");
+        System.out.println("2. Modificar");
+        System.out.println("3. Eliminar");
+        System.out.println("4. Listar\n");
         System.out.print("Ingrese una opcion: ");
         int op = l.nextInt();
         System.out.println("");
