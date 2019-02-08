@@ -5,6 +5,7 @@ public class Agentes extends Criminales {
     private String clasificacion;
 
     public Agentes() {
+        super();
     }
 
     public Agentes(String clasificacion, String nombre, String gener, String pais, String encarcelado, String descripcionFisica) {
@@ -22,7 +23,7 @@ public class Agentes extends Criminales {
 
     @Override
     public String toString() {
-        return "TAS{" + "clasificacion=" + clasificacion + '}';
+        return super.toString() + "clasificacion=" + clasificacion + '}';
     }
 
 }
