@@ -9,6 +9,6 @@ package lab4;
  *
  * @author jason
  */
-public class Asesinato extends Delito_Grave {
+public class Secuestro extends Delito_Grave {
     
 }
