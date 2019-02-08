@@ -6,6 +6,12 @@ public class Lab4 {
 
     static Scanner l = new Scanner(System.in);
     static int pos;
+    private ArrayList Criminales = new ArrayList();
+    private ArrayList Agentes = new ArrayList();
+    private ArrayList Crimines = new ArrayList();
+    static int contC = 0;
+    static int contA = 0;
+    static int contCr = 0;
 
     public static void main(String[] args) {
         int r = 1;
@@ -17,9 +23,16 @@ public class Lab4 {
                     break;
                 case 3:
                     System.out.print("Ingrese una posicion a elimnar: ");
-                    pos=l.nextInt();
+                    pos = l.nextInt();
                     break;
                 case 4:
+                    System.out.println("1. Listar criminales");
+                    System.out.println("2. Listar Agentes");
+                    System.out.println("3. Listar Crimines");
+                    System.out.print("Ingrese una opcion: ");
+                    int op2 = l.nextInt();
+                    switch (op2) {
+                    }//Fin del switch de las listas
                     break;
                 default:
                     System.out.println("Opcion no valida\n");
