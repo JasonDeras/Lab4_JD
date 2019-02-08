@@ -32,6 +32,14 @@ public class Lab4 {
                     System.out.print("Ingrese una opcion: ");
                     int op2 = l.nextInt();
                     switch (op2) {
+                        case 1:
+                            break;
+                        case 2:
+                            break;
+                        case 3:
+                            break;
+                        default :
+                            System.out.println("Opcion de listado no valida\n");
                     }//Fin del switch de las listas
                     break;
                 default:
