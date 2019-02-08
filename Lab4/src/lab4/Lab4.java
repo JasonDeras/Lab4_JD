@@ -196,8 +196,8 @@ public class Lab4 {
                                 System.out.println("Ingrese posicion a modificar:");
                                 pos=l.nextInt();
                             }
-                            if (Crimines.get(pos) instanceof Vandalismo){
-                                modificarDelito();
+                            if (Crimines.get(pos) instanceof Vandalismo){                                
+                                modificarDelito(Cr);
                                 System.out.println("[8] para modificar nombre de policia\n"
                                         + "[9] id policia\n"
                                         + "[10] nCelda\n"
@@ -209,33 +209,39 @@ public class Lab4 {
                                     case 8:
                                         System.out.println("Ingrese nombre de policia: ");
                                         policia=l.next();
+                                        ((Vandalismo)Crimines.get(pos)).setPolicia(policia);
                                         break; 
 
                                     case 9:
                                         System.out.println("Ingrese id policia: ");
                                         Idpolicia=l.next();
+                                        ((Vandalismo)Crimines.get(pos)).setIdpolicia(Idpolicia);
                                         break;
 
                                     case 10:
                                         System.out.println("Ingrese numero de celda: ");
                                         nCelda=l.nextInt();
+                                        ((Vandalismo)Crimines.get(pos)).setnCelda(nCelda);
                                         break;
                                     case 11:
                                         System.out.println("Ingrese edificacion: ");
                                         edificacion=l.next();
+                                        ((Vandalismo)Crimines.get(pos)).setEdificacion(edificacion);
                                         break;
                                         
                                     case 12:
                                         System.out.println("Ingrese numero de pisos: ");
                                         n_pisos=l.nextInt();
+                                        ((Vandalismo)Crimines.get(pos)).setN_pisos(n_pisos);
                                         break;
                                         
                                     case 13:
                                         System.out.println("Ingrese nombre: ");
                                         nombreD=l.next();
+                                        ((Vandalismo)Crimines.get(pos)).setNombreD(nombreD);
                                         break;
                                 }
-                                Crimines.get(pos)= new Vandalismo(edificacion, n_pisos, nombreD);
+                                
                             }                                               
                             
                             else if (Crimines.get(pos) instanceof Hurto){//vandalismo
