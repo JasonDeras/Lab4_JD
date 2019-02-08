@@ -1,8 +1,6 @@
 package lab4;
 
-
 public class Agentes extends Criminales {
-
 
     private String clasificacion;
 
@@ -14,7 +12,6 @@ public class Agentes extends Criminales {
         super(nombre, gener, pais, encarcelado, descripcionFisica);
         this.clasificacion = clasificacion;
     }
-    
 
     public Agentes(String clasificacion) {
         this.clasificacion = clasificacion;
