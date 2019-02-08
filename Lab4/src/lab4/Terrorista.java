@@ -4,15 +4,16 @@ public class Terrorista extends Agentes {
 
     private String ciudad;
     private String metodo;
+    private String pais;
 
     public Terrorista() {
         super();
     }
 
-    public Terrorista(String ciudad, String metodo, String clasificacion, String nombre, String gener, String pais, String encarcelado, String descripcionFisica) {
-        super(clasificacion, nombre, gener, pais, encarcelado, descripcionFisica);
+    public Terrorista(String ciudad, String metodo, String pais) {
         this.ciudad = ciudad;
         this.metodo = metodo;
+        this.pais = pais;
     }
 
     public String getCiudad() {
@@ -29,6 +30,14 @@ public class Terrorista extends Agentes {
 
     public void setMetodo(String metodo) {
         this.metodo = metodo;
+    }
+
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
     }
 
     @Override

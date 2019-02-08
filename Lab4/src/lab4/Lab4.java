@@ -30,14 +30,10 @@ public class Lab4 {
     static String devuelto;
     static String drogas;
     static int cantidad;
-    
 
-    static ArrayList<Criminales> Criminales = new ArrayList();
-    static ArrayList<Agentes> Agentes = new ArrayList();
+    static ArrayList Criminales = new ArrayList();
+    static ArrayList Agentes = new ArrayList();
     static ArrayList Crimines = new ArrayList();
-    static int contC = 0;
-    static int contA = 0;
-    static int contCr = 0;
 
     public static void main(String[] args) throws ParseException {
         int r = 1;
@@ -45,143 +41,232 @@ public class Lab4 {
             int opcion;
             switch (menu()) {
                 case 1:
-                    System.out.println("Ingrese \n"
-                            + "[1] para agregar delitos\n"
-                            + "[2] agregar criminales\n"
-                            + "[3] agregar agentes:");
-                    opcion=l.nextInt();
-                    switch(opcion){
+                    try {
+                        System.out.println("Ingrese \n"
+                                + "[1] para agregar delitos\n"
+                                + "[2] agregar criminales\n"
+                                + "[3] agregar agentes:");
+                        opcion = l.nextInt();
+                        valida(Integer.toString(opcion));
+                    } catch (Nuestra_Exception e) {
+                        System.out.println(e.getMessage());
+                    }//Fin de la exception creada
+                    opcion = l.nextInt();
+                    switch (opcion) {
                         case 1:
-                            System.out.println("Ingrese delito\n"
-                                    + "[1] delito menor\n"
-                                    + "[2] delito grave: ");
-                            opcion=l.nextInt();
+                            try {
+                                System.out.println("Ingrese delito\n"
+                                        + "[1] delito menor\n"
+                                        + "[2] delito grave: ");
+                                opcion = l.nextInt();
+                                valida(Integer.toString(opcion));
+                            } catch (Nuestra_Exception e) {
+                                System.out.println(e.getMessage());
+                            }//Fin de la exception creada
+                            opcion = l.nextInt();
                             System.out.println("Ingrese descripcion:");
-                            descripcion=l.next();
+                            descripcion = l.next();
                             System.out.println("Ingrese nombre de la victima: ");
-                            nombreVictima=l.next();
-                            System.out.println("Ingrese\n"
-                                    + "[1] si es culpable\n"
-                                    + "[2] caso contrario: ");
-                            estado=l.nextInt();
-                            if (estado==1){
+                            nombreVictima = l.next();
+                            try {
+                                System.out.println("Ingrese\n"
+                                        + "[1] si es culpable\n"
+                                        + "[2] caso contrario: ");
+                                estado = l.nextInt();
+                                valida(Integer.toString(estado));
+                            } catch (Nuestra_Exception e) {
+                                System.out.println(e.getMessage());
+                            }//Fin de la exception creada
+                            estado = l.nextInt();
+                            if (estado == 1) {
                                 System.out.println("Si es culpable");
-                                culpable="si";
-                            }
-                            else if (estado==2){
+                                culpable = "si";
+                            } else if (estado == 2) {
                                 System.out.println("no es culpable");
-                                culpable="no";
+                                culpable = "no";
                             }
-                            System.out.println("Ingrese sentencia\n"
-                                    + "[1] años \n"
-                                    + "[2] pena de muerte: ");
-                            estado=l.nextInt();
-                            if (estado==1){
+                            try {
+                                System.out.println("Ingrese sentencia\n"
+                                        + "[1] años \n"
+                                        + "[2] pena de muerte: ");
+                                estado = l.nextInt();
+                                valida(Integer.toString(estado));
+                            } catch (Nuestra_Exception e) {
+                                System.out.println(e.getMessage());
+                            }//Fin de la exception creada
+                            estado = l.nextInt();
+                            if (estado == 1) {
                                 System.out.println("Sentencia: años");
-                                sentencia="años";
-                            }
-                            else if (estado==2){
+                                sentencia = "años";
+                            } else if (estado == 2) {
                                 System.out.println("Sentencia: pena de muerte");
-                                sentencia="pena de muerte";
+                                sentencia = "pena de muerte";
                             }
-                            fecha=new Date();
+                            fecha = new Date();
                             System.out.println("Ingrese pais: ");
-                            pais=l.next();
+                            pais = l.next();
                             System.out.println("Ingrese numero de delito: ");
-                            nDelito=l.nextInt();
-                            switch(opcion){//opciones de kill
+                            nDelito = l.nextInt();
+
+                            switch (opcion) {//opciones de kill
                                 case 1://delito menor
                                     System.out.println("Ingrese nombre de policia: ");
-                                    policia=l.next();
+                                    policia = l.next();
                                     System.out.println("Ingrese id policia: ");
-                                    Idpolicia=l.next();
+                                    Idpolicia = l.next();
                                     System.out.println("Ingrese numero de celda: ");
-                                    nCelda=l.nextInt();
-                                    System.out.println("Ingrese \n"
-                                            + "[1] para vandalismo\n"
-                                            + "[2] hurto\n"
-                                            + "[3] prostitucion: ");
-                                    opcion=l.nextInt();
-                                    switch(opcion){
+                                    nCelda = l.nextInt();
+                                    try {
+                                        System.out.println("Ingrese \n"
+                                                + "[1] para vandalismo\n"
+                                                + "[2] hurto\n"
+                                                + "[3] prostitucion: ");
+                                        opcion = l.nextInt();
+                                        valida(Integer.toString(opcion));
+                                    } catch (Nuestra_Exception e) {
+                                        System.out.println(e.getMessage());
+                                    }//Fin de la exception creada
+                                    switch (opcion) {
                                         case 1://vandalismo
                                             System.out.println("Ingrese edificacion: ");
-                                            edificacion=l.next();
+                                            edificacion = l.next();
                                             System.out.println("Ingrese numero de pisos:");
-                                            n_pisos=l.nextInt();
+                                            n_pisos = l.nextInt();
                                             break;//fin vandalismo
 
                                         case 2://hurto
                                             System.out.println("Ingrese objeto hurtado: ");
-                                            objetoHurtado=l.next();
-                                            System.out.println("Ingrese valor: ");
-                                            valor=l.nextInt();
+                                            objetoHurtado = l.next();
+                                            try {
+                                                System.out.println("Ingrese valor: ");
+                                                valor = l.nextInt();
+                                                valida(Integer.toString(valor));
+                                            } catch (Nuestra_Exception e) {
+                                                System.out.println(e.getMessage());
+                                            }//Fin de la exception creada
+                                            valor = l.nextInt();
                                             break;//fin hurto
 
                                         case 3://prostitucion
                                             System.out.println("Ingrese nombre solicitante:");
-                                            nombreSolicitante=l.next();
+                                            nombreSolicitante = l.next();
                                             break;//fin prostitucion
-                                    }
+
+                                    }//Fin de las opciones del delito menor
+                                    Crimines.add(new Delito_Menor(policia, Idpolicia, nCelda, descripcion, nombreVictima, culpable, sentencia, pais, fecha, nDelito));
                                     break;//fin delito menor
-                                    
+
                                 case 2: //delito grave:
                                     System.out.println("Ingrese nivel de gravedad(1-5): ");
-                                    gravedad=l.nextInt();
-                                    System.out.println("Ingrese \n"
-                                            + "[1] para terrorismo\n"
-                                            + "[2] asesinato\n"
-                                            + "[3] violacion\n"
-                                            + "[4] secuestro\n"
-                                            + "[5] trafico de drogas");
-                                    opcion=l.nextInt();
-                                    switch (opcion){
+                                    gravedad = l.nextInt();
+                                    try {
+                                        System.out.println("Ingrese \n"
+                                                + "[1] para terrorismo\n"
+                                                + "[2] asesinato\n"
+                                                + "[3] violacion\n"
+                                                + "[4] secuestro\n"
+                                                + "[5] trafico de drogas");
+                                        opcion = l.nextInt();
+                                        valida(Integer.toString(opcion));
+                                    } catch (Nuestra_Exception e) {
+                                        System.out.println(e.getMessage());
+                                    }//Fin de la exception creada
+                                    opcion = l.nextInt();
+                                    switch (opcion) {
                                         case 1://terrorismo
                                             System.out.println("Ingrese artefacto:");
-                                            artefacto=l.next();
+                                            artefacto = l.next();
                                             System.out.println("Ingrese numero de victimas: ");
-                                            victimas=l.nextInt();
+                                            victimas = l.nextInt();
                                             break;
-                                            
+
                                         case 2: //asesinato
                                             System.out.println("Ingrese arma: ");
-                                            arma=l.next();
+                                            arma = l.next();
                                             System.out.println("Ingrese numero de cuerpos: ");
-                                            nCuerpos=l.nextInt();
+                                            nCuerpos = l.nextInt();
                                             break;
-                                            
+
                                         case 3://violacion
                                             System.out.println("Ingrese edad victima: ");
-                                            edadVictima =l.nextInt();
+                                            edadVictima = l.nextInt();
                                             break;
-                                            
+
                                         case 4://secuestro
+                                            Crimines.add(new Secuestro());
                                             System.out.println("Ingrese tiempo retenido: ");
-                                            tiempo_ret=l.nextInt();
-                                            System.out.println("Ingrese como fue devuelto \n"
-                                                    + "[1] vivo\n"
-                                                    + "[2] muerto");
-                                            estado=l.nextInt();
-                                            if (estado==1){
+                                            tiempo_ret = l.nextInt();
+                                            try {
+                                                System.out.println("Ingrese como fue devuelto \n"
+                                                        + "[1] vivo\n"
+                                                        + "[2] muerto");
+                                                estado = l.nextInt();
+                                                valida(Integer.toString(estado));
+                                            } catch (Nuestra_Exception e) {
+                                                System.out.println(e.getMessage());
+                                            }//Fin de la exception creada
+                                            estado = l.nextInt();
+                                            if (estado == 1) {
                                                 System.out.println("devuelto vivo");
-                                                devuelto="vivo";
-                                            }
-                                            else if (estado==2){
+                                                devuelto = "vivo";
+                                            } else if (estado == 2) {
                                                 System.out.println("devuelto muerto");
-                                                devuelto="muerto";
+                                                devuelto = "muerto";
                                             }
                                             break;
                                         case 5://trafico de drogas
                                             System.out.println("Ingrese nombre de droga: ");
-                                            drogas=l.next();
+                                            drogas = l.next();
                                             System.out.println("Ingrese catidad: ");
-                                            cantidad=l.nextInt();
+                                            cantidad = l.nextInt();
                                             break;//fin trafico de drogas
                                     }
+                                    Crimines.add(new Delito_Menor(policia, Idpolicia, nCelda, descripcion, nombreVictima, culpable, sentencia, pais, fecha, nDelito));
                                     break;//fin delito grave
-                            }
-                            
-                    }
-                    
+                            }//opciones de kill
+                        case 2:
+                            try {
+                                System.out.println("Ingrese como fue Clasificacion \n"
+                                        + "[1] Terrorsita\n"
+                                        + "[2] Asesino\n"
+                                        + "[3] Secuestrador");
+                                opcion = l.nextInt();
+                                valida(Integer.toString(opcion));
+                            } catch (Nuestra_Exception e) {
+                                System.out.println(e.getMessage());
+                            }//Fin de la exception creada
+                            opcion = l.nextInt();
+                            switch (opcion) {
+                                case 1://terrorista
+                                    System.out.println("Ingrese pais");
+                                    pais = l.next();
+                                    System.out.println("Ingrese ciudad de ataque: ");
+                                    String ciudad = l.next();
+                                    System.out.println("Ingrese metodo");
+                                    String metodo = l.next();
+                                    Agentes.add(new Terrorista(ciudad, metodo, pais));
+                                    break;
+                                case 2://Asesino
+                                    System.out.println("Ingrese nombre de la victima");
+                                    nombreVictima = l.next();
+                                    System.out.println("Ingrese el arma");
+                                    String arma = l.next();
+                                    Agentes.add(new Asesino(nombreVictima, arma));
+                                    break;
+                                case 3://Secuestrador
+
+                                    break;
+                                default:
+                                    System.out.println("Agente no valido\n");
+                            }//Fin del switch de los agentes
+                            System.out.println("");
+                            System.out.println("");
+                            break;
+                        case 3:
+                            break;
+                        default:
+                            System.out.println("Opcion no valida");
+                    }//Fin del swtich de agregar
                     break;
                 case 2:
                     break;
@@ -271,7 +356,7 @@ public class Lab4 {
     }//Fin del metodo del menu
 
     static void valida(String op) throws Nuestra_Exception {
-        if (!op.equalsIgnoreCase("1") || !op.equalsIgnoreCase("2") || !op.equalsIgnoreCase("3") || !op.equalsIgnoreCase("3")) {
+        if (!op.equalsIgnoreCase("1") || !op.equalsIgnoreCase("2") || !op.equalsIgnoreCase("3") || !op.equalsIgnoreCase("4") || !op.equalsIgnoreCase("5")) {
             throw new Nuestra_Exception(Color.red, "No se aceptan negativos");
         }
     }//Fin de la validacion de letra como numero en el menu

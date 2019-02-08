@@ -1,9 +1,5 @@
 package lab4;
 
-/**
- *
- * @author jason
- */
 public class Asesino extends Agentes {
 
     private String nombreAsesino;
@@ -11,10 +7,9 @@ public class Asesino extends Agentes {
 
     public Asesino() {
         super();
-    }       
+    }
 
-    public Asesino(String nombreAsesino, String arma, String clasificacion, String nombre, String gener, String pais, String encarcelado, String descripcionFisica) {
-        super(clasificacion, nombre, gener, pais, encarcelado, descripcionFisica);
+    public Asesino(String nombreAsesino, String arma) {
         this.nombreAsesino = nombreAsesino;
         this.arma = arma;
     }
