@@ -1,6 +1,8 @@
 package lab4;
 
-public class Agentes extends Criminales{
+
+public class Agentes extends Criminales {
+
 
     private String clasificacion;
 
@@ -28,7 +30,7 @@ public class Agentes extends Criminales{
 
     @Override
     public String toString() {
-        return "TAS{" + "clasificacion=" + clasificacion + '}';
+        return super.toString() + "clasificacion=" + clasificacion + '}';
     }
 
 }

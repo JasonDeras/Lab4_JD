@@ -9,8 +9,8 @@ public class Secuestrador extends Agentes {
         super();
     }
 
-    public Secuestrador(String nombre_v, int rescate, String clasificacion) {
-        super(clasificacion);
+    public Secuestrador(String nombre_v, int rescate, String clasificacion, String nombre, String gener, String pais, String encarcelado, String descripcionFisica) {
+        super(clasificacion, nombre, gener, pais, encarcelado, descripcionFisica);
         this.nombre_v = nombre_v;
         this.rescate = rescate;
     }
@@ -33,7 +33,7 @@ public class Secuestrador extends Agentes {
 
     @Override
     public String toString() {
-        return "Secuestrador{" + "nombre_v=" + nombre_v + ", rescate=" + rescate + '}';
+        return super.toString() + "nombre_v=" + nombre_v + ", rescate=" + rescate + '}';
     }
 
 }

@@ -1,19 +1,43 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package lab4;
 
 /**
  *
  * @author jason
  */
-public class Asesino extends Agentes{
+public class Asesino extends Agentes {
+
     private String nombreAsesino;
     private String arma;
 
     public Asesino() {
         super();
     }       
+
+    public Asesino(String nombreAsesino, String arma, String clasificacion, String nombre, String gener, String pais, String encarcelado, String descripcionFisica) {
+        super(clasificacion, nombre, gener, pais, encarcelado, descripcionFisica);
+        this.nombreAsesino = nombreAsesino;
+        this.arma = arma;
+    }
+
+    public String getNombreAsesino() {
+        return nombreAsesino;
+    }
+
+    public void setNombreAsesino(String nombreAsesino) {
+        this.nombreAsesino = nombreAsesino;
+    }
+
+    public String getArma() {
+        return arma;
+    }
+
+    public void setArma(String arma) {
+        this.arma = arma;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "nombreAsesino=" + nombreAsesino + ", arma=" + arma + '}';
+    }
+
 }
