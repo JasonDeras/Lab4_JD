@@ -1,13 +1,13 @@
 package lab4;
 
-public class TAS {
+public class Agentes extends Criminal{
 
     private String clasificacion;
 
-    public TAS() {
+    public Agentes() {
     }
 
-    public TAS(String clasificacion) {
+    public Agentes(String clasificacion) {
         this.clasificacion = clasificacion;
     }
 

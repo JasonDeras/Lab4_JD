@@ -9,6 +9,6 @@ package lab4;
  *
  * @author jason
  */
-public class Asesino extends TAS{
+public class Asesino extends Agentes{
     
 }

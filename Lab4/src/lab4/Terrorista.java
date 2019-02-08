@@ -9,6 +9,6 @@ package lab4;
  *
  * @author jason
  */
-public class Terrorista extends TAS{
+public class Terrorista extends Agentes{
     
 }
