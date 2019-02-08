@@ -254,7 +254,11 @@ public class Lab4 {
                                     Agentes.add(new Asesino(nombreVictima, arma));
                                     break;
                                 case 3://Secuestrador
-
+                                    System.out.println("Ingrese nombre de la victima");
+                                    nombreVictima = l.next();
+                                    System.out.println("Ingrese cantiad por el rescate");
+                                    int pago = l.nextInt();
+                                    Agentes.add(new Secuestrador(nombreD, pago));
                                     break;
                                 default:
                                     System.out.println("Agente no valido\n");
