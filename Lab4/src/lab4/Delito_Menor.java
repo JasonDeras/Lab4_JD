@@ -9,6 +9,12 @@ package lab4;
  *
  * @author jason
  */
-public class Delito_Menor {
+public class Delito_Menor extends Kill{
+    private String policia, Idpolicia;
+    private int nCelda;
+
+    public Delito_Menor() {
+        super();
+    }
     
 }

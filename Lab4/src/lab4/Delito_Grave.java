@@ -9,6 +9,11 @@ package lab4;
  *
  * @author jason
  */
-public class Delito_Grave {
+public class Delito_Grave extends Kill{
+    private int gravedad;
+
+    public Delito_Grave() {
+        super();
+    }
     
 }
