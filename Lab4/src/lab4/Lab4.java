@@ -44,7 +44,7 @@ public class Lab4 {
         while (r == 1) {
             int opcion;
             switch (menu()) {
-                case 1:
+                case 1://agregar
                     System.out.println("Ingrese \n"
                             + "[1] para agregar delitos\n"
                             + "[2] agregar criminales\n"
@@ -182,9 +182,79 @@ public class Lab4 {
                             
                     }
                     
-                    break;
-                case 2:
-                    break;
+                    break;//fin agregar
+                case 2://modificar
+                    System.out.println("Ingrese \n"
+                            + "[1] para modificar delitos\n"
+                            + "[2] criminales:"
+                            + "[3]agentes");
+                    opcion=l.nextInt();
+                    int pos=-1;
+                    switch (opcion){
+                        case 1://modificar delitos
+                            while (pos<0 || pos>Crimines.size() -1){
+                                System.out.println("Ingrese posicion a modificar:");
+                                pos=l.nextInt();
+                            }
+                            if (Crimines.get(pos) instanceof Vandalismo){
+                                modificarDelito();
+                                System.out.println("[8] para modificar nombre de policia\n"
+                                        + "[9] id policia\n"
+                                        + "[10] nCelda\n"
+                                        + "[11] para modificar edificacion\n"
+                                        + "[12] numero de pisos\n"
+                                        + "[13] nombre: ");
+                                opcion=l.nextInt();
+                                switch (opcion){
+                                    case 8:
+                                        System.out.println("Ingrese nombre de policia: ");
+                                        policia=l.next();
+                                        break; 
+
+                                    case 9:
+                                        System.out.println("Ingrese id policia: ");
+                                        Idpolicia=l.next();
+                                        break;
+
+                                    case 10:
+                                        System.out.println("Ingrese numero de celda: ");
+                                        nCelda=l.nextInt();
+                                        break;
+                                    case 11:
+                                        System.out.println("Ingrese edificacion: ");
+                                        edificacion=l.next();
+                                        break;
+                                        
+                                    case 12:
+                                        System.out.println("Ingrese numero de pisos: ");
+                                        n_pisos=l.nextInt();
+                                        break;
+                                        
+                                    case 13:
+                                        System.out.println("Ingrese nombre: ");
+                                        nombreD=l.next();
+                                        break;
+                                }
+                                Crimines.get(pos)= new Vandalismo(edificacion, n_pisos, nombreD);
+                            }                                               
+                            
+                            else if (Crimines.get(pos) instanceof Hurto){//vandalismo
+                                
+                            }
+                            else if (Crimines.get(pos) instanceof Prostitucion){//vandalismo
+                                
+                            }
+                            break;//fin modificar delitos
+                            
+                        case 2://modificar criminales
+                            
+                            break;//fin modificar criminales
+                            
+                        case 3: //modificar agentes
+                            
+                            break; //fin modificar agentes
+                    }
+                    break;//fin modificar
                 case 3:
                     System.out.print("Ingrese una posicion a elimnar: ");
                     pos = l.nextInt();
@@ -275,5 +345,74 @@ public class Lab4 {
             throw new Nuestra_Exception(Color.red, "No se aceptan negativos");
         }
     }//Fin de la validacion de letra como numero en el menu
+    
+    public static void modificarDelito(){
+        int item;
+        System.out.println("Ingrese\n"
+                + "[1] para modificar la descripcion:\n"
+                + "[2] nombre de victima\n"
+                + "[3] culpable\n"
+                + "[4] sentencia\n"
+                + "[5] fecha\n"
+                + "[6] pais\n"
+                + "[7]numero de delito:");
+        item=l.nextInt();
+        switch(item){
+            case 1: 
+                System.out.println("Ingrese descripcion:");
+                descripcion=l.next();
+            break;
+            
+            case 2:
+                System.out.println("Ingrese nombre de la victima: ");
+                nombreVictima=l.next();
+            break;
+            
+            case 3:
+                System.out.println("Ingrese\n"
+                        + "[1] si es culpable\n"
+                        + "[2] caso contrario: ");
+                estado=l.nextInt();
+                if (estado==1){
+                    System.out.println("Si es culpable");
+                    culpable="si";
+                }
+                else if (estado==2){
+                    System.out.println("no es culpable");
+                    culpable="no";
+                }
+                break;
+                
+            case 4:
+            System.out.println("Ingrese sentencia\n"
+                    + "[1] años \n"
+                    + "[2] pena de muerte: ");
+            estado=l.nextInt();
+            if (estado==1){
+                System.out.println("Sentencia: años");
+                sentencia="años";
+            }
+            else if (estado==2){
+                System.out.println("Sentencia: pena de muerte");
+                sentencia="pena de muerte";
+            }
+            break;
+            
+            case 5:
+                System.out.println("Nueva fecha ingresada");
+                fecha=new Date();
+                break;
+            
+            case 6:  
+                System.out.println("Ingrese pais: ");
+                pais=l.next();
+                break;
+                
+            case 7:
+                System.out.println("Ingrese numero de delito: ");
+                nDelito=l.nextInt();
+                break;               
+        }
+    }
 
 }//Fin del main
