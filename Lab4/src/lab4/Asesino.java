@@ -9,6 +9,7 @@ package lab4;
  *
  * @author jason
  */
+<<<<<<< HEAD
 public class Asesino extends TAS{
     private String nombreAsesino;
     private String arma;
@@ -16,5 +17,8 @@ public class Asesino extends TAS{
     public Asesino() {
         super();
     }    
+=======
+public class Asesino extends Agentes{
+>>>>>>> cb69ed73f342c70ce291d5be256bbd5329f43921
     
 }
