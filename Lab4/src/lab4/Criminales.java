@@ -1,17 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package lab4;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Denuar
- */
 public class Criminales {
+
     private ArrayList delitos = new ArrayList();
     private String nombre, gener, pais, encarcelado, descripcionFisica;
 
@@ -77,5 +69,5 @@ public class Criminales {
     @Override
     public String toString() {
         return "Criminales{" + "delitos=" + delitos + ", nombre=" + nombre + ", gener=" + gener + ", pais=" + pais + ", encarcelado=" + encarcelado + ", descripcionFisica=" + descripcionFisica + '}';
-    }    
+    }
 }

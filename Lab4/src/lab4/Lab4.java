@@ -3,6 +3,7 @@ package lab4;
 import java.awt.Color;
 import java.text.ParseException;
 import java.util.*;
+import jdk.nashorn.internal.parser.TokenType;
 
 public class Lab4 {
 
@@ -44,8 +45,7 @@ public class Lab4 {
                     try {
                         System.out.println("Ingrese \n"
                                 + "[1] para agregar delitos\n"
-                                + "[2] agregar criminales\n"
-                                + "[3] agregar agentes:");
+                                + "[2] agregar criminales\n");
                         opcion = l.nextInt();
                         valida(Integer.toString(opcion));
                     } catch (Nuestra_Exception e) {
@@ -193,7 +193,6 @@ public class Lab4 {
                                             break;
 
                                         case 4://secuestro
-                                            Crimines.add(new Secuestro());
                                             System.out.println("Ingrese tiempo retenido: ");
                                             tiempo_ret = l.nextInt();
                                             try {
@@ -225,48 +224,33 @@ public class Lab4 {
                                     break;//fin delito grave
                             }//opciones de kill
                         case 2:
+                            System.out.println("Ingrese nombre");
+                            String nombre = l.next();
                             try {
-                                System.out.println("Ingrese como fue Clasificacion \n"
-                                        + "[1] Terrorsita\n"
-                                        + "[2] Asesino\n"
-                                        + "[3] Secuestrador");
-                                opcion = l.nextInt();
-                                valida(Integer.toString(opcion));
+                                System.out.println("Ingrese Edad");
+                                int edad = l.nextInt();
+                                valida(Integer.toString(edad));
                             } catch (Nuestra_Exception e) {
                                 System.out.println(e.getMessage());
                             }//Fin de la exception creada
-                            opcion = l.nextInt();
-                            switch (opcion) {
-                                case 1://terrorista
-                                    System.out.println("Ingrese pais");
-                                    pais = l.next();
-                                    System.out.println("Ingrese ciudad de ataque: ");
-                                    String ciudad = l.next();
-                                    System.out.println("Ingrese metodo");
-                                    String metodo = l.next();
-                                    Agentes.add(new Terrorista(ciudad, metodo, pais));
-                                    break;
-                                case 2://Asesino
-                                    System.out.println("Ingrese nombre de la victima");
-                                    nombreVictima = l.next();
-                                    System.out.println("Ingrese el arma");
-                                    String arma = l.next();
-                                    Agentes.add(new Asesino(nombreVictima, arma));
-                                    break;
-                                case 3://Secuestrador
-                                    System.out.println("Ingrese nombre de la victima");
-                                    nombreVictima = l.next();
-                                    System.out.println("Ingrese cantiad por el rescate");
-                                    int pago = l.nextInt();
-                                    Agentes.add(new Secuestrador(nombreD, pago));
-                                    break;
-                                default:
-                                    System.out.println("Agente no valido\n");
-                            }//Fin del switch de los agentes
-                            System.out.println("");
-                            System.out.println("");
-                            break;
-                        case 3:
+                            int edad = l.nextInt();
+                            System.out.println("Ingrese Genero");
+                            String genero = l.next();
+                            System.out.println("Ingrese pais");
+                            pais = l.next();
+                            System.out.println("Encarscelado 1-.Si,2.-No: ");
+                            int enca = l.nextInt();
+                            String care = "";
+                            if (enca == 1) {
+                                care = "Encarcelado";
+                            } else if (enca == 2) {
+                                care = "Libre";
+                            } else {
+                                System.out.println("Opcion no valida\n");
+                            }
+                            System.out.println("Ingrese descripcion fisica");
+                            String descrip=l.next();
+                            Criminales.add(new Criminales(nombre, genero, pais, care, descripcion));
                             break;
                         default:
                             System.out.println("Opcion no valida");
@@ -275,7 +259,7 @@ public class Lab4 {
                 case 2:
                     break;
                 case 3:
-                    System.out.print("Ingrese una posicion a elimnar: ");
+                    System.out.print("Ingrese una posicion a eliminar: ");
                     pos = l.nextInt();
                     System.out.println("1. Eliminar Criminales");
                     System.out.println("2. Eliminar Agentes");
