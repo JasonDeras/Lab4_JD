@@ -10,5 +10,6 @@ package lab4;
  * @author jason
  */
 public class Asesinato {
-    
+    private String arma;
+    private int nCuerpos;
 }

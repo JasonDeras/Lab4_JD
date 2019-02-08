@@ -10,5 +10,6 @@ package lab4;
  * @author jason
  */
 public class Hurto extends Delito_Menor{
-    
+    private String objetoHurtado;
+    private int valor;
 }
