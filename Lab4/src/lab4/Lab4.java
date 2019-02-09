@@ -44,6 +44,7 @@ public class Lab4 {
         while (r == 1) {
             int opcion;
             switch (menu()) {
+//<<<<<<< HEAD
                 case 1://agregar
                     System.out.println("Ingrese \n"
                             + "[1] para agregar delitos\n"
@@ -51,6 +52,21 @@ public class Lab4 {
                             + "[3] agregar agentes:");
                     opcion=l.nextInt();
                     switch(opcion){
+//=======
+                case 1:
+                    try {
+                        System.out.println("Ingrese \n"
+                                + "[1] para agregar delitos\n"
+                                + "[2] agregar criminales\n"
+                                + "[3] agragr agentes\n");
+                        opcion = l.nextInt();
+                        valida(Integer.toString(opcion));
+                    } catch (Nuestra_Exception e) {
+                        System.out.println(e.getMessage());
+                    }//Fin de la exception creada
+                    opcion = l.nextInt();
+                    switch (opcion) {
+//>>>>>>> 4b5c5a4dcbdeb24e3a226435eb90b047d0a4cca1
                         case 1:
                             System.out.println("Ingrese delito\n"
                                     + "[1] delito menor\n"
@@ -179,6 +195,7 @@ public class Lab4 {
                                     }
                                     break;//fin delito grave
                             }
+//<<<<<<< HEAD
                             
                     }
                     
@@ -328,6 +345,60 @@ public class Lab4 {
                             break; //fin modificar agentes
                     }
                     break;//fin modificar
+//=======
+                            /*System.out.println("Ingrese descripcion fisica");
+                            String descrip = l.next();
+                            Criminales.add(new Criminales(nombre, genero, pais, care, descripcion));
+                            break;*/
+                        case 3:
+                            try {
+                                System.out.println("Ingrese como fue Clasificacion \n"
+                                        + "[1] Terrorsita\n"
+                                        + "[2] Asesino\n"
+                                        + "[3] Secuestrador");
+                                opcion = l.nextInt();
+                                valida(Integer.toString(opcion));
+                            } catch (Nuestra_Exception e) {
+                                System.out.println(e.getMessage());
+                            }//Fin de la exception creada
+                            opcion = l.nextInt();
+                            switch (opcion) {
+                                case 1://terrorista
+                                    System.out.println("Ingrese pais");
+                                    pais = l.next();
+                                    System.out.println("Ingrese ciudad de ataque: ");
+                                    String ciudad = l.next();
+                                    System.out.println("Ingrese metodo");
+                                    String metodo = l.next();
+                                    Agentes.add(new Terrorista(ciudad, metodo, pais));
+                                    break;
+                                case 2://Asesino
+                                    System.out.println("Ingrese nombre de la victima");
+                                    nombreVictima = l.next();
+                                    System.out.println("Ingrese el arma");
+                                    String arma = l.next();
+                                    Agentes.add(new Asesino(nombreVictima, arma));
+                                    break;
+                                case 3://Secuestrador
+                                    System.out.println("Ingrese nombre de la victima");
+                                    nombreVictima = l.next();
+                                    System.out.println("Ingrese cantiad por el rescate");
+                                    int pago = l.nextInt();
+                                    Agentes.add(new Secuestrador(nombreD, pago));
+                                    break;
+                                default:
+                                    System.out.println("Agente no valido\n");
+                            }//Fin del switch de los agentes
+                            System.out.println("");
+                            System.out.println("");
+                            break;
+                        default:
+                            System.out.println("Opcion no valida");
+                    }//Fin del swtich de agregar
+                    break;
+                case 2:
+                    break;
+//>>>>>>> 4b5c5a4dcbdeb24e3a226435eb90b047d0a4cca1
                 case 3:
                     System.out.print("Ingrese una posicion a elimnar: ");
                     pos = l.nextInt();
