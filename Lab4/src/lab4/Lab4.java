@@ -45,7 +45,8 @@ public class Lab4 {
                     try {
                         System.out.println("Ingrese \n"
                                 + "[1] para agregar delitos\n"
-                                + "[2] agregar criminales\n");
+                                + "[2] agregar criminales\n"
+                                + "[3] agragr agentes\n");
                         opcion = l.nextInt();
                         valida(Integer.toString(opcion));
                     } catch (Nuestra_Exception e) {
@@ -249,8 +250,50 @@ public class Lab4 {
                                 System.out.println("Opcion no valida\n");
                             }
                             System.out.println("Ingrese descripcion fisica");
-                            String descrip=l.next();
+                            String descrip = l.next();
                             Criminales.add(new Criminales(nombre, genero, pais, care, descripcion));
+                            break;
+                        case 3:
+                            try {
+                                System.out.println("Ingrese como fue Clasificacion \n"
+                                        + "[1] Terrorsita\n"
+                                        + "[2] Asesino\n"
+                                        + "[3] Secuestrador");
+                                opcion = l.nextInt();
+                                valida(Integer.toString(opcion));
+                            } catch (Nuestra_Exception e) {
+                                System.out.println(e.getMessage());
+                            }//Fin de la exception creada
+                            opcion = l.nextInt();
+                            switch (opcion) {
+                                case 1://terrorista
+                                    System.out.println("Ingrese pais");
+                                    pais = l.next();
+                                    System.out.println("Ingrese ciudad de ataque: ");
+                                    String ciudad = l.next();
+                                    System.out.println("Ingrese metodo");
+                                    String metodo = l.next();
+                                    Agentes.add(new Terrorista(ciudad, metodo, pais));
+                                    break;
+                                case 2://Asesino
+                                    System.out.println("Ingrese nombre de la victima");
+                                    nombreVictima = l.next();
+                                    System.out.println("Ingrese el arma");
+                                    String arma = l.next();
+                                    Agentes.add(new Asesino(nombreVictima, arma));
+                                    break;
+                                case 3://Secuestrador
+                                    System.out.println("Ingrese nombre de la victima");
+                                    nombreVictima = l.next();
+                                    System.out.println("Ingrese cantiad por el rescate");
+                                    int pago = l.nextInt();
+                                    Agentes.add(new Secuestrador(nombreD, pago));
+                                    break;
+                                default:
+                                    System.out.println("Agente no valido\n");
+                            }//Fin del switch de los agentes
+                            System.out.println("");
+                            System.out.println("");
                             break;
                         default:
                             System.out.println("Opcion no valida");
