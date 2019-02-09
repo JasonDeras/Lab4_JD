@@ -35,4 +35,9 @@ public class Asesino extends Agentes {
         return super.toString() + "nombreAsesino=" + nombreAsesino + ", arma=" + arma + '}';
     }
 
+    @Override
+    public void cometerDelito() {
+        System.out.println("Asesino " + nombreAsesino + " utilizó el arma " + arma); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

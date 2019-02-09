@@ -45,4 +45,9 @@ public class Terrorista extends Agentes {
         return super.toString() + "ciudad=" + ciudad + ", metodo=" + metodo + '}';
     }
 
+    @Override
+    public void cometerDelito() {
+        System.out.println("Terrorista utilizó el metodo " + metodo + " en la ciudad: " + ciudad); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

@@ -36,4 +36,9 @@ public class Secuestrador extends Agentes {
         return super.toString() + "nombre_v=" + nombre_v + ", rescate=" + rescate + '}';
     }
 
+    @Override
+    public void cometerDelito() {
+        System.out.println("El nombre de la victima es: " + nombre_v + ", la cantidad de rescate es " + rescate); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

@@ -1,6 +1,6 @@
 package lab4;
 
-public class Agentes extends Criminales {
+public abstract class Agentes extends Criminales {
 
     private String clasificacion;
 
@@ -29,5 +29,6 @@ public class Agentes extends Criminales {
     public String toString() {
         return super.toString() + "clasificacion=" + clasificacion + '}';
     }
+    public abstract void cometerDelito();
 
 }
