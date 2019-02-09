@@ -9,8 +9,7 @@ public class Secuestrador extends Agentes {
         super();
     }
 
-    public Secuestrador(String nombre_v, int rescate, String clasificacion, String nombre, String gener, String pais, String encarcelado, String descripcionFisica) {
-        super(clasificacion, nombre, gener, pais, encarcelado, descripcionFisica);
+    public Secuestrador(String nombre_v, int rescate) {
         this.nombre_v = nombre_v;
         this.rescate = rescate;
     }
